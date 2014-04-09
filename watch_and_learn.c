@@ -1,7 +1,7 @@
 #include <pebble.h>
 #include "cards.h"
 
-#define NEXT_INTERVAL  (15)    // minutes
+#define NEXT_INTERVAL  (15)    // minutes (change this number to increase or decrease time between intervals.)
 #define THRESHOLD      (800)   // mg
 
 static Window *window;
@@ -74,10 +74,10 @@ static void window_load(Window *window) {
 	
   window_set_background_color(window, GColorBlack);	
 	
-  text_layer = text_layer_create(GRect(15, 0, 120, 56));
+  text_layer = text_layer_create(GRect(15, 0, 120, 56)); //This is the area of the clock. Change it to move the clock.
   text_layer_set_text_color(text_layer, GColorWhite);
   text_layer_set_background_color(text_layer, GColorClear);
-  text_layer_set_font(text_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_MEDIUM_NUMBERS));
+  text_layer_set_font(text_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_MEDIUM_NUMBERS)); //Clock font
   text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
   layer_add_child(window_get_root_layer(window), (Layer*)text_layer);
 }
