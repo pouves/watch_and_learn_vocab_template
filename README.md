@@ -1,4 +1,4 @@
-W-L_vocab-temp
+Watch & Learn Vocab Template
 ==============================
 
 Add your own vocabulary words to the Watch&Learn Pebble Watchapp!
