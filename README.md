@@ -81,7 +81,7 @@ char const * const aa_back_line_one[] = {
 };
 
 
-*If you have a lot of words, you can use Excel to easily make a longer list like this:
+*If you have a lot of words, you can use Excel to easily make a longer list like this:*
 
 Copy and paste the following into the given cells:
 
@@ -207,6 +207,7 @@ copy the results (you only need one per app), and paste the string of numbers an
 *Success? Hooray!
 
 *Fail? Hmm… There may be some bugs for different reasons. Most will probably have to do with the “content.h” file that you just modified. 
+
 -Make sure that you have each word in the quotation marks and that you either typed those quotation marks directly into CloudPebble or you copied and pasted from this page (do not derive the quotation marks in a Word document). 
 
 -Make sure that the number of cards in #define NUMBER_OF_FLASH_CARDS  () equals the number of words you have.
