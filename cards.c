@@ -47,12 +47,10 @@ void deinit_cards(void) {
 
 enum side_t flip_card(void) {
   if(current_side == FRONT) {
-    //layer_set_hidden((Layer*)image_layer_front, true);
 	hide_card_text_front();
     show_card_text();
     current_side = BACK;
   } else {
-    //layer_set_hidden((Layer *)image_layer_front, false);
     hide_card_text();
 	show_card_text_front();
     current_side = FRONT;
@@ -74,7 +72,6 @@ void rand_card(void) {
 }
 
 void load_card(void) {
-  //load_card_image();
   load_card_text(current_card);
   card_used[current_card] = true;
 
@@ -83,41 +80,42 @@ void load_card(void) {
   }
 }
 
+// Change some of these to change the area of text, text font, text color, or text alignment
 void init_card_text(void) {
-  // Create the various text layers
+  // Create the various text layers (words)
   card_front.front_line_one  = text_layer_create(GRect(0, 55, 144, 100));
 
-  // Set text colors
+  // Set text colors (words)
   text_layer_set_text_color(card_front.front_line_one, GColorWhite);
 
-  // Set background colors
+  // Set background colors (words)
   text_layer_set_background_color(card_front.front_line_one, GColorBlack);
 
-  // Set fonts
+  // Set fonts (words)
   text_layer_set_font(card_front.front_line_one, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
 
-  // Text alignment
+  // Text alignment (words)
   text_layer_set_text_alignment(card_front.front_line_one, GTextAlignmentCenter);
 
-  // Add as child layers to window root
+  // Add as child layers to window root (words)
   layer_add_child(window_get_root_layer(window), (Layer*)card_front.front_line_one);
   
-  // Create the various text layers
+  // Create the various text layers (definitions)
   card_back.back_line_one   = text_layer_create(GRect(0, 55, 144, 100));
 
-  // Set text colors
+  // Set text colors (definitions)
   text_layer_set_text_color(card_back.back_line_one, GColorBlack);
 
-  // Set background colors
+  // Set background colors (definitions)
   text_layer_set_background_color(card_back.back_line_one, GColorClear);
 
-  // Set fonts
+  // Set fonts (definitions)
   text_layer_set_font(card_back.back_line_one, fonts_get_system_font(FONT_KEY_GOTHIC_24));
 
-  // Text alignment
+  // Text alignment (definitions)
   text_layer_set_text_alignment(card_back.back_line_one, GTextAlignmentCenter);
 
-  // Add as child layers to window root
+  // Add as child layers to window root (definitions)
   layer_add_child(window_get_root_layer(window), (Layer*)card_back.back_line_one);
 
   hide_card_text();
